@@ -10,9 +10,10 @@
 
 ```javascript
 var valueOptions = Array(3,4); // baik, sangat baik
-$('input:radio[name*="nilai"]').filter('[value="'+valueOptions[0]+'"]').attr('checked', true); // default
+var rows = $('input:radio[name*="nilai"]');
+rows.filter('[value="'+valueOptions[0]+'"]').attr('checked', true); // set default
 
-$('input:radio[name*="nilai"]').each(function() {
+rows.each(function() {
     var random = valueOptions[Math.floor(Math.random()*valueOptions.length)];
     $(this).filter('[value="'+random+'"]').attr('checked', true);
 });
@@ -29,7 +30,7 @@ $('input:radio[name*="nilai"]').each(function() {
 var valueOptions = Array(3,4);
 // means valueOptions : 
 //        Sering / Baik / Cukup jelas,
-//        Selalu / Sanat Baik / Sangat jelas
+//        Selalu / Sangat Baik / Sangat jelas
 ```
 
 - 1 => Tidak Pernah / Buruk / Tidak jelas
