@@ -1,20 +1,22 @@
 # Random Pick Evaluation
 
-Quickstart
+## Quickstart
 - Open browser (Chrome, Mozilla)
 - Login to cybercampus
 - Navigate to your evaluation page
-- Open inspect elements (Ctrl+Shift+i) on windows or (Cmd+Option+i) on Mac
+- Open inspect elements (Ctrl+Shift+i) on windows or (Cmd+Option+i) on mac
 - On inspect elements window, click Console section
 - Copy & Paste code below
 
 ```javascript
-var valueOptions = Array(3,4); // cukup jelas, sangat jelas
-var row = $('input:radio[name*="nilai"]');
-for (var i = row.length - 1; i >= 0; i--) {
-    var random = valueOptions[Math.floor(Math.random()*valueOptions.length)]
-    $(row[i]).filter('[value="'+random+'"]').attr('checked', true);
-}
+var valueOptions = Array(3,4); // baik, sangat baik
+// set default value
+$('input:radio[name*="nilai"]').filter('[value="'+valueOptions[0]+'"]').attr('checked', true); 
+
+$('input:radio[name*="nilai"]').each(function() {
+    var random = valueOptions[Math.floor(Math.random()*valueOptions.length)];
+    $(this).filter('[value="'+random+'"]').attr('checked', true);
+});
 ```
 
 - Enter
@@ -26,14 +28,17 @@ for (var i = row.length - 1; i >= 0; i--) {
 ```javascript
 // random value you want
 var valueOptions = Array(3,4);
-// means : valueOptions : 
-//    Sering / Cukup jelas,
-//    Selalu / Sangat jelas
+//
+// means valueOptions : 
+//        Sering / Baik / Cukup jelas,
+//        Selalu / Sanat Baik / Sangat jelas
 
 ```
 
-- 1 => Tidak Pernah / Tidak jelas
-- 2 => Jarang / Kurang jelas
-- 3 => Sering / Cukup jelas
-- 4 => Selalu / Sangat jelas
+- 1 => Tidak Pernah / Buruk / Tidak jelas
+- 2 => Jarang / Kurang baik / Kurang jelas
+- 3 => Sering / Baik / Cukup jelas
+- 4 => Selalu / Sangat baik / Sangat jelas
 - 0 => Tidak Ada Pendapat
+
+Thanks!
