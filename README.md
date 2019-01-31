@@ -6,12 +6,11 @@
 - Navigate to your evaluation page
 - Open inspect elements (Ctrl+Shift+i) on windows or (Cmd+Option+i) on mac
 - On inspect elements window, click Console section
-- Copy & Paste code below
+- Copy & paste code below
 
 ```javascript
 var valueOptions = Array(3,4); // baik, sangat baik
-// set default value
-$('input:radio[name*="nilai"]').filter('[value="'+valueOptions[0]+'"]').attr('checked', true); 
+$('input:radio[name*="nilai"]').filter('[value="'+valueOptions[0]+'"]').attr('checked', true); // default
 
 $('input:radio[name*="nilai"]').each(function() {
     var random = valueOptions[Math.floor(Math.random()*valueOptions.length)];
@@ -19,20 +18,18 @@ $('input:radio[name*="nilai"]').each(function() {
 });
 ```
 
-- Enter
+- Press enter
 - Back to your evaluation page
-- Save
+- Save it!
 
 ### Code Explaination
 
 ```javascript
 // random value you want
 var valueOptions = Array(3,4);
-//
 // means valueOptions : 
 //        Sering / Baik / Cukup jelas,
 //        Selalu / Sanat Baik / Sangat jelas
-
 ```
 
 - 1 => Tidak Pernah / Buruk / Tidak jelas
